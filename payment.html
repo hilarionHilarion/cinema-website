@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CINEPLEX - Payment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="navbar-logo">CINE<span>PLEX</span></div>
+        <a href="index.html">Now Showing</a>
+        <a href="booking.html">Book Tickets</a>
+        <a href="login.html">Member Login</a>
+        <a href="employee.html">Employee Portal</a>
+        <div class="clearfix"></div>
+    </div>
+
+    <!-- Page Wrapper -->
+    <div class="page-wrapper">
+
+        <!-- Header Banner -->
+        <div class="page-header">
+            <h1>SECURE PAYMENT</h1>
+            <p>Step 3 of 3 &mdash; Enter your payment details below to confirm your booking</p>
+        </div>
+
+        <!-- Booking progress steps -->
+        <table>
+            <tr>
+                <th style="background-color: #4caf50; border-color: #4caf50;">&#10003; Step 1: Choose Film</th>
+                <th style="background-color: #4caf50; border-color: #4caf50;">&#10003; Step 2: Select Tickets</th>
+                <th style="background-color: #c9a84c; color: #0a0a14; border-color: #c9a84c;">&#9654; Step 3: Payment</th>
+                <th>Step 4: Confirmation</th>
+            </tr>
+        </table>
+
+        <!-- Demo notice -->
+        <div class="info-box">
+            <strong>Note:</strong> This is a demonstration payment screen for the purposes of this portfolio.
+            Please do not enter real card details. This page simulates the payment process only.
+        </div>
+
+        <!-- Payment Form -->
+        <div class="form-section">
+            <h2>Card Payment Details</h2>
+
+            <div class="form-group">
+                <label for="cardName">Name on card:</label>
+                <input type="text" id="cardName" placeholder="e.g. John Smith">
+            </div>
+
+            <div class="form-group">
+                <label for="cardNumber">Card number (16 digits):</label>
+                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="16">
+            </div>
+
+            <div class="form-group">
+                <label for="expiry">Expiry date (MM/YY):</label>
+                <input type="text" id="expiry" placeholder="MM/YY" maxlength="5">
+            </div>
+
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input type="password" id="cvv" placeholder="3 or 4 digits" maxlength="4">
+            </div>
+
+            <p style="font-size: 13px; color: #555555;">
+                <strong>We accept:</strong> Visa &bull; Mastercard &bull; American Express
+            </p>
+
+            <!-- Error box shown by JS if validation fails -->
+            <div class="error-box" id="payError"></div>
+
+            <br>
+            <input type="button" class="btn-gold" value="Confirm Payment" onclick="confirmPayment()">
+            &nbsp;
+            <a href="booking.html"><input type="button" class="btn" value="&larr; Back to Booking"></a>
+
+        </div>
+
+        <!-- Order summary reminder -->
+        <div class="form-section">
+            <h2>Your Order Summary</h2>
+            <p style="font-size: 13px; color: #555555;">Please review your booking details before confirming payment. If anything is incorrect, go back to the booking page.</p>
+
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td>Film</td>
+                    <td>As selected on the booking page</td>
+                </tr>
+                <tr>
+                    <td>Date and Time</td>
+                    <td>As selected on the booking page</td>
+                </tr>
+                <tr>
+                    <td>Number of Tickets</td>
+                    <td>As selected on the booking page</td>
+                </tr>
+                <tr>
+                    <td>Discount Applied</td>
+                    <td>Based on your membership type</td>
+                </tr>
+                <tr>
+                    <td><strong>Total to Pay</strong></td>
+                    <td><strong>As calculated on the booking page</strong></td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>
+            <a href="index.html">Now Showing</a>
+            <a href="booking.html">Book Tickets</a>
+            <a href="login.html">Member Login</a>
+            <a href="employee.html">Employee Portal</a>
+        </p>
+        <p>&copy; 2026 CINEPLEX. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

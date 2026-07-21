@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CINEPLEX - Booking Confirmed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="navbar-logo">CINE<span>PLEX</span></div>
+        <a href="index.html">Now Showing</a>
+        <a href="booking.html">Book Tickets</a>
+        <a href="login.html">Member Login</a>
+        <a href="employee.html">Employee Portal</a>
+        <div class="clearfix"></div>
+    </div>
+
+    <!-- Page Wrapper -->
+    <div class="page-wrapper">
+
+        <!-- Header Banner -->
+        <div class="page-header">
+            <h1>BOOKING CONFIRMED</h1>
+            <p>Thank you for booking with CINEPLEX &mdash; enjoy the film!</p>
+        </div>
+
+        <!-- Booking progress steps -->
+        <table>
+            <tr>
+                <th style="background-color: #4caf50; border-color: #4caf50;">&#10003; Step 1: Choose Film</th>
+                <th style="background-color: #4caf50; border-color: #4caf50;">&#10003; Step 2: Select Tickets</th>
+                <th style="background-color: #4caf50; border-color: #4caf50;">&#10003; Step 3: Payment</th>
+                <th style="background-color: #4caf50; border-color: #4caf50;">&#10003; Step 4: Confirmation</th>
+            </tr>
+        </table>
+
+        <!-- Success message -->
+        <div class="result-box" style="display: block; text-align: center; padding: 24px;">
+            <p style="font-size: 22px; color: #2e7d32; font-weight: bold; margin: 0 0 6px 0;">&#10003; Payment Successful</p>
+            <p style="font-size: 14px; color: #444444; margin: 0;">Your tickets have been booked and your e-tickets have been sent to your email address.</p>
+        </div>
+
+        <!-- Booking details -->
+        <div class="form-section">
+            <h2>Your Booking Details</h2>
+
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td><strong>Booking Reference</strong></td>
+                    <td id="bookingRef">&mdash;</td>
+                </tr>
+                <tr>
+                    <td><strong>Film</strong></td>
+                    <td id="confFilm">&mdash;</td>
+                </tr>
+                <tr>
+                    <td><strong>Date</strong></td>
+                    <td id="confDate">&mdash;</td>
+                </tr>
+                <tr>
+                    <td><strong>Showtime</strong></td>
+                    <td id="confTime">&mdash;</td>
+                </tr>
+                <tr>
+                    <td><strong>Number of Tickets</strong></td>
+                    <td id="confTickets">&mdash;</td>
+                </tr>
+                <tr>
+                    <td><strong>Customer Type</strong></td>
+                    <td id="confMember">&mdash;</td>
+                </tr>
+                <tr>
+                    <td><strong>Discount Applied</strong></td>
+                    <td id="confDiscount">&mdash;</td>
+                </tr>
+                <tr>
+                    <td><strong id="seatLabel">Seats</strong></td>
+                    <td id="confSeats">&mdash;</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Paid</strong></td>
+                    <td id="confTotal" style="font-weight: bold; color: #2e7d32;">&mdash;</td>
+                </tr>
+            </table>
+
+            <div class="info-box">
+                <strong>What happens next?</strong> Please collect your tickets from the box office or show your booking reference on your phone at the self-service kiosk. Doors open 20 minutes before the showing.
+            </div>
+
+            <br>
+            <a href="index.html"><input type="button" class="btn-gold" value="&#8592; Back to Now Showing"></a>
+            &nbsp;
+            <input type="button" class="btn-dark" value="Print Confirmation" onclick="window.print()">
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>
+            <a href="index.html">Now Showing</a>
+            <a href="booking.html">Book Tickets</a>
+            <a href="login.html">Member Login</a>
+            <a href="employee.html">Employee Portal</a>
+        </p>
+        <p>&copy; 2026 CINEPLEX. All rights reserved.</p>
+    </div>
+
+    <script>
+        /* Load booking details saved by the payment page */
+        var booking = JSON.parse(sessionStorage.getItem("cineplexBooking") || "{}");
+
+        document.getElementById("bookingRef").textContent    = booking.ref      || "CPX" + Math.floor(Math.random() * 90000 + 10000);
+        document.getElementById("confFilm").textContent      = booking.film     || "Not available";
+        document.getElementById("confDate").textContent      = booking.date     || "Not available";
+        document.getElementById("confTime").textContent      = booking.time     || "Not available";
+        document.getElementById("confTickets").textContent   = booking.tickets  || "Not available";
+        document.getElementById("confMember").textContent    = booking.member   || "Not available";
+        document.getElementById("confDiscount").textContent  = booking.discount || "None";
+        document.getElementById("confTotal").textContent     = booking.total    || "Not available";
+        document.getElementById("confSeats").textContent     =(booking.seats || []).join(", ");
+        // Change label to "Seat" if only one seat was booked
+        var seatCount = (booking.seats || []).length
+        document.getElementById("seatLabel").textContent = seatCount === 1 ? "Seat" : "Seats";
+
+
+    </script>
+
+</body>
+</html>

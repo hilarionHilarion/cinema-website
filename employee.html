@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CINEPLEX - Employee Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="navbar-logo">CINE<span>PLEX</span></div>
+        <a href="index.html">Now Showing</a>
+        <a href="booking.html">Book Tickets</a>
+        <a href="login.html">Member Login</a>
+        <a href="employee.html">Employee Portal</a>
+        <div class="clearfix"></div>
+    </div>
+
+    <!-- Page Wrapper -->
+    <div class="page-wrapper">
+
+        <!-- Header Banner -->
+        <div class="page-header">
+            <h1>EMPLOYEE PORTAL</h1>
+            <p>Manage films, customers, bookings and discount offers</p>
+        </div>
+
+        <div class="info-box">
+            <strong>Staff Access Only.</strong>
+            This page is for CINEPLEX employees to manage the cinema listings and customer records.
+        </div>
+
+        <!-- ============================================
+             SECTION 1: Currently Showing Films
+             ============================================ -->
+        <h2>Currently Showing Films</h2>
+
+        <table>
+            <tr>
+                <th>Film Title</th>
+                <th>Genre</th>
+                <th>Duration</th>
+                <th>Rating</th>
+                <th>Ticket Price</th>
+                <th>Showtimes</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>Dune: Part Two</td>
+                <td>Sci-Fi / Adventure</td>
+                <td>166 mins</td>
+                <td>PG-13</td>
+                <td>&pound;12.50</td>
+                <td>10:30 | 13:45 | 17:00 | 20:15</td>
+                <td>
+                    <input type="button" class="btn-dark" value="Edit" onclick="alert('Edit film: Dune: Part Two\nThis would open an edit form in a full system.')">
+                    <input type="button" class="btn" value="Remove" onclick="removeFilm('Dune: Part Two')">
+                </td>
+            </tr>
+            <tr>
+                <td>Oppenheimer</td>
+                <td>Drama / History</td>
+                <td>180 mins</td>
+                <td>R</td>
+                <td>&pound;13.00</td>
+                <td>11:00 | 14:30 | 18:00 | 21:30</td>
+                <td>
+                    <input type="button" class="btn-dark" value="Edit" onclick="alert('Edit film: Oppenheimer\nThis would open an edit form in a full system.')">
+                    <input type="button" class="btn" value="Remove" onclick="removeFilm('Oppenheimer')">
+                </td>
+            </tr>
+            <tr>
+                <td>The Batman</td>
+                <td>Action / Crime</td>
+                <td>176 mins</td>
+                <td>PG-13</td>
+                <td>&pound;12.00</td>
+                <td>12:00 | 15:15 | 19:00 | 22:00</td>
+                <td>
+                    <input type="button" class="btn-dark" value="Edit" onclick="alert('Edit film: The Batman\nThis would open an edit form in a full system.')">
+                    <input type="button" class="btn" value="Remove" onclick="removeFilm('The Batman')">
+                </td>
+            </tr>
+            <tr>
+                <td>Interstellar</td>
+                <td>Sci-Fi / Drama</td>
+                <td>169 mins</td>
+                <td>PG-13</td>
+                <td>&pound;11.50</td>
+                <td>10:00 | 13:00 | 16:30 | 20:00</td>
+                <td>
+                    <input type="button" class="btn-dark" value="Edit" onclick="alert('Edit film: Interstellar\nThis would open an edit form in a full system.')">
+                    <input type="button" class="btn" value="Remove" onclick="removeFilm('Interstellar')">
+                </td>
+            </tr>
+            <tr>
+                <td>Gladiator II</td>
+                <td>Action / Drama</td>
+                <td>148 mins</td>
+                <td>R</td>
+                <td>&pound;13.50</td>
+                <td>11:30 | 14:45 | 18:30 | 21:45</td>
+                <td>
+                    <input type="button" class="btn-dark" value="Edit" onclick="alert('Edit film: Gladiator II\nThis would open an edit form in a full system.')">
+                    <input type="button" class="btn" value="Remove" onclick="removeFilm('Gladiator II')">
+                </td>
+            </tr>
+            <tr>
+                <td>Inside Out 2</td>
+                <td>Animation / Comedy</td>
+                <td>100 mins</td>
+                <td>PG</td>
+                <td>&pound;10.50</td>
+                <td>09:30 | 12:15 | 15:00 | 17:45</td>
+                <td>
+                    <input type="button" class="btn-dark" value="Edit" onclick="alert('Edit film: Inside Out 2\nThis would open an edit form in a full system.')">
+                    <input type="button" class="btn" value="Remove" onclick="removeFilm('Inside Out 2')">
+                </td>
+            </tr>
+        </table>
+
+        <hr class="section-divider">
+
+        <!-- ============================================
+             SECTION 2: Add a New Film
+             ============================================ -->
+        <h2>Add a New Film</h2>
+        <p style="font-size: 13px; color: #444444;">Use the form below to add a new film to the current listings.</p>
+
+        <div class="form-section">
+
+            <div class="form-group">
+                <label for="filmTitle">Film Title:</label>
+                <input type="text" id="filmTitle" placeholder="e.g. Avengers: Secret Wars">
+            </div>
+
+            <div class="form-group">
+                <label for="filmGenre">Genre:</label>
+                <input type="text" id="filmGenre" placeholder="e.g. Action / Adventure">
+            </div>
+
+            <div class="form-group">
+                <label for="filmDuration">Duration (minutes):</label>
+                <input type="number" id="filmDuration" placeholder="e.g. 142" min="1">
+            </div>
+
+            <div class="form-group">
+                <label for="filmPrice">Ticket Price (&pound;):</label>
+                <input type="number" id="filmPrice" placeholder="e.g. 12.50" step="0.50" min="0">
+            </div>
+
+            <div class="form-group">
+                <label for="filmTimes">Showtimes (comma separated):</label>
+                <input type="text" id="filmTimes" placeholder="e.g. 10:30, 14:00, 18:30, 21:00">
+            </div>
+
+            <!-- Error box shown by JS if validation fails -->
+            <div class="error-box" id="addFilmError"></div>
+
+            <br>
+            <input type="button" class="btn-gold" value="Add Film to Listings" onclick="addFilm()">
+
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- ============================================
+             SECTION 3: Customer Records
+             ============================================ -->
+        <h2>Customer Records</h2>
+        <p style="font-size: 13px; color: #444444;">The table below shows registered member accounts.</p>
+
+        <table>
+            <tr>
+                <th>Customer Name</th>
+                <th>Username</th>
+                <th>Member Type</th>
+                <th>Date Joined</th>
+                <th>Total Bookings</th>
+            </tr>
+            <tr>
+                <td>Sarah Johnson</td>
+                <td>sarah_j</td>
+                <td>Regular</td>
+                <td>January 2024</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>James Liu</td>
+                <td>jliu92</td>
+                <td>Senior</td>
+                <td>March 2023</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>Emma Wilson</td>
+                <td>emma_w</td>
+                <td>Regular</td>
+                <td>June 2024</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>Ahmed Hassan</td>
+                <td>ahmed_h</td>
+                <td>Children</td>
+                <td>September 2024</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>Lucy Chen</td>
+                <td>lchen</td>
+                <td>Regular</td>
+                <td>February 2025</td>
+                <td>3</td>
+            </tr>
+        </table>
+
+        <hr class="section-divider">
+
+        <!-- ============================================
+             SECTION 4: Recent Bookings
+             ============================================ -->
+        <h2>Recent Bookings</h2>
+        <p style="font-size: 13px; color: #444444;">The table below shows recent ticket bookings made by customers.</p>
+
+        <table>
+            <tr>
+                <th>Booking Ref</th>
+                <th>Customer</th>
+                <th>Film</th>
+                <th>Date</th>
+                <th>Tickets</th>
+                <th>Total Paid</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>CPX-A3F9D</td>
+                <td>Sarah Johnson</td>
+                <td>Dune: Part Two</td>
+                <td>23 Mar 2026</td>
+                <td>2</td>
+                <td>&pound;22.50</td>
+                <td>Confirmed</td>
+            </tr>
+            <tr>
+                <td>CPX-B7C2E</td>
+                <td>James Liu</td>
+                <td>Oppenheimer</td>
+                <td>23 Mar 2026</td>
+                <td>4</td>
+                <td>&pound;41.60</td>
+                <td>Confirmed</td>
+            </tr>
+            <tr>
+                <td>CPX-D1K8W</td>
+                <td>Emma Wilson</td>
+                <td>Gladiator II</td>
+                <td>23 Mar 2026</td>
+                <td>1</td>
+                <td>&pound;12.15</td>
+                <td>Confirmed</td>
+            </tr>
+            <tr>
+                <td>CPX-H5P3Q</td>
+                <td>Guest</td>
+                <td>The Batman</td>
+                <td>22 Mar 2026</td>
+                <td>3</td>
+                <td>&pound;36.00</td>
+                <td>Confirmed</td>
+            </tr>
+            <tr>
+                <td>CPX-M9R6T</td>
+                <td>Lucy Chen</td>
+                <td>Inside Out 2</td>
+                <td>22 Mar 2026</td>
+                <td>2</td>
+                <td>&pound;15.75</td>
+                <td>Cancelled</td>
+            </tr>
+        </table>
+
+        <hr class="section-divider">
+
+        <!-- ============================================
+             SECTION 5: Manage Discounts
+             ============================================ -->
+        <h2>Manage Discount Offers</h2>
+        <p style="font-size: 13px; color: #444444;">Use the form below to update the discount percentage for a member type.</p>
+
+        <div class="form-section">
+
+            <div class="form-group">
+                <label for="discMemberType">Member Type:</label>
+                <select id="discMemberType">
+                    <option value="Regular Member">Regular Member</option>
+                    <option value="Senior Member">Senior Member</option>
+                    <option value="Children Member">Children Member</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="discPercent">New Discount Percentage (%):</label>
+                <input type="number" id="discPercent" placeholder="e.g. 15" min="0" max="100">
+            </div>
+
+            <!-- Error box shown by JS if validation fails -->
+            <div class="error-box" id="discError"></div>
+
+            <br>
+            <input type="button" class="btn-gold" value="Update Discount" onclick="updateDiscount()">
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>
+            <a href="index.html">Now Showing</a>
+            <a href="booking.html">Book Tickets</a>
+            <a href="login.html">Member Login</a>
+            <a href="employee.html">Employee Portal</a>
+        </p>
+        <p>&copy; 2026 CINEPLEX. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

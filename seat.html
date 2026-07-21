@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Select Your Seats</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .seat-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 40px);
+            gap: 8px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .seat {
+            width: 40px;
+            height: 40px;
+            background-color: #1a1a2e;
+            border: 1px solid #c9a84c;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .seat.selected {
+            background-color: #4caf50;
+        }
+        .seat.unavailable {
+            background-color: #cc0000;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="navbar-logo">CINE<span>PLEX</span></div>
+    <a href="index.html">Now Showing</a>
+    <a href="booking.html">Book Tickets</a>
+    <a href="login.html">Member Login</a>
+    <a href="employee.html">Employee Portal</a>
+    <div class="clearfix"></div>
+</div>
+
+<div class="page-wrapper">
+    <div class="page-header">
+        <h1>SELECT YOUR SEATS</h1>
+        <p>Choose your preferred seats below</p>
+    </div>
+
+    <div id="seatInfo"></div>
+
+    <div class="seat-grid" id="seatGrid"></div>
+
+    <br>
+    <input type="button" class="btn-gold" value="Confirm Seats →" onclick="confirmSeats()">
+    <input type="button" class="btn-dark" value="← Back to Booking" onclick="goBackToBooking()">
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

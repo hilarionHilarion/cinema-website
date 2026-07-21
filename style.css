@@ -1,0 +1,381 @@
+/* ================================================
+   CINEPLEX - Movie Ticket Booking Website
+   External CSS Stylesheet - style.css
+   Module: DG1IAD Portfolio 2
+   ================================================ */
+
+/* --- Body --- */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: #0f0f1a;
+    color: #222222;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Headings --- */
+h1 {
+    font-size: 28px;
+    color: #c9a84c;
+    margin: 0 0 8px 0;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #1a1a2e;
+    border-bottom: 2px solid #c9a84c;
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+}
+
+h3 {
+    font-size: 14px;
+    color: #c9a84c;
+    margin: 8px 0 4px 0;
+}
+
+/* --- Links --- */
+a {
+    color: #c9a84c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #e8c96e;
+}
+
+/* ------------------------------------------------
+   NAVIGATION BAR
+   ------------------------------------------------ */
+.navbar {
+    background-color: #0a0a14;
+    padding: 0 20px;
+    overflow: hidden;
+    border-bottom: 2px solid #c9a84c;
+}
+
+.navbar-logo {
+    float: left;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding: 14px 10px 14px 0;
+}
+
+.navbar-logo span {
+    color: #c9a84c;
+}
+
+.navbar a {
+    float: left;
+    color: #cccccc;
+    text-decoration: none;
+    padding: 14px 16px;
+    display: block;
+    font-size: 13px;
+}
+
+.navbar a:hover {
+    background-color: #c9a84c;
+    color: #0a0a14;
+    text-decoration: none;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/* ------------------------------------------------
+   PAGE WRAPPER - white content area
+   ------------------------------------------------ */
+.page-wrapper {
+    width: 90%;
+    max-width: 1050px;
+    margin: 24px auto;
+    padding: 24px;
+    background-color: #f5f5f5;
+    border: 1px solid #c9a84c;
+}
+
+/* ------------------------------------------------
+   HEADER BANNER
+   ------------------------------------------------ */
+.page-header {
+    background-color: #0a0a14;
+    padding: 26px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 2px solid #c9a84c;
+}
+
+.page-header h1 {
+    color: #c9a84c;
+    font-size: 32px;
+    letter-spacing: 4px;
+    margin: 0 0 6px 0;
+}
+
+.page-header p {
+    color: #aaaaaa;
+    margin: 0;
+    font-size: 13px;
+}
+
+/* ------------------------------------------------
+   MOVIE CARDS (index.html)
+   ------------------------------------------------ */
+.movie-container {
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.movie-card {
+    float: left;
+    width: 28%;
+    margin: 1%;
+    background-color: #1a1a2e;
+    border: 1px solid #c9a84c;
+    padding: 8px;
+    text-align: center;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: contain;
+    background-color: #0a0a14;
+    border: 1px solid #c9a84c;
+    display: block;
+}
+
+.movie-card h3 {
+    font-size: 13px;
+    color: #c9a84c;
+    margin: 8px 0 4px 0;
+}
+
+.movie-card p {
+    font-size: 12px;
+    color: #cccccc;
+    margin: 3px 0;
+}
+
+.movie-card .price {
+    font-size: 14px;
+    font-weight: bold;
+    color: #e8c96e;
+    margin: 6px 0;
+}
+
+/* ------------------------------------------------
+   BUTTONS
+   ------------------------------------------------ */
+.btn {
+    padding: 8px 18px;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    border: 1px solid #999999;
+    background-color: #eeeeee;
+    color: #222222;
+    margin-right: 6px;
+}
+
+.btn:hover {
+    background-color: #dddddd;
+}
+
+.btn-gold {
+    padding: 8px 18px;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    background-color: #c9a84c;
+    color: #0a0a14;
+    border: 1px solid #a07c28;
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.btn-gold:hover {
+    background-color: #e8c96e;
+}
+
+.btn-dark {
+    padding: 8px 18px;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    background-color: #1a1a2e;
+    color: #ffffff;
+    border: 1px solid #c9a84c;
+    margin-right: 6px;
+}
+
+.btn-dark:hover {
+    background-color: #0a0a14;
+}
+
+/* ------------------------------------------------
+   FORMS
+   ------------------------------------------------ */
+.form-section {
+    background-color: #ffffff;
+    border: 1px solid #c9a84c;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.form-section h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: 13px;
+    color: #1a1a2e;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group input[type="email"],
+.form-group select {
+    width: 280px;
+    padding: 7px 8px;
+    border: 1px solid #aaaaaa;
+    background-color: #ffffff;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #c9a84c;
+    outline: none;
+}
+
+/* ------------------------------------------------
+   INFO / RESULT / ERROR BOXES
+   ------------------------------------------------ */
+.info-box {
+    background-color: #fff8e1;
+    border: 1px solid #c9a84c;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    font-size: 13px;
+}
+
+.result-box {
+    background-color: #f0fff0;
+    border: 1px solid #4caf50;
+    padding: 14px 16px;
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.9;
+    display: none;
+}
+
+.error-box {
+    background-color: #fff0f0;
+    border: 1px solid #cc0000;
+    padding: 12px 16px;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #cc0000;
+    display: none;
+}
+
+/* ------------------------------------------------
+   TABLES
+   ------------------------------------------------ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    font-size: 13px;
+}
+
+table th {
+    background-color: #1a1a2e;
+    color: #c9a84c;
+    padding: 9px 10px;
+    text-align: left;
+    border: 1px solid #c9a84c;
+}
+
+table td {
+    padding: 8px 10px;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+}
+
+table tr:nth-child(even) td {
+    background-color: #faf6ee;
+}
+
+table tr:hover td {
+    background-color: #fff8e1;
+}
+
+/* ------------------------------------------------
+   SECTION DIVIDER
+   ------------------------------------------------ */
+.section-divider {
+    border: none;
+    border-top: 2px solid #c9a84c;
+    margin: 20px 0;
+}
+
+/* ------------------------------------------------
+   DISCOUNT BOX
+   ------------------------------------------------ */
+.discount-box {
+    background-color: #fff8e1;
+    border: 1px solid #c9a84c;
+    padding: 12px;
+    margin-bottom: 16px;
+    font-size: 13px;
+}
+
+.discount-box p {
+    margin: 4px 0;
+}
+
+/* ------------------------------------------------
+   FOOTER
+   ------------------------------------------------ */
+.footer {
+    background-color: #0a0a14;
+    color: #888888;
+    text-align: center;
+    padding: 16px;
+    font-size: 12px;
+    border-top: 2px solid #c9a84c;
+}
+
+.footer p {
+    margin: 4px 0;
+}
+
+.footer a {
+    color: #c9a84c;
+    text-decoration: none;
+    padding: 0 8px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
